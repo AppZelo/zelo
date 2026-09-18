@@ -58,9 +58,9 @@ const styles = StyleSheet.create({
     container: {
         backgroundColor: colors.white1,
         flex: 1,
-        paddingTop: 50,
+        paddingTop: 100,
     },
-
+    
     content: {
         flex: 1,
         gap: 25,
@@ -102,13 +102,14 @@ const styles = StyleSheet.create({
         borderColor: colors.gray1,
         borderRadius: 12,
         borderWidth: 2,
+        height: 50,
         paddingLeft: 10,
         width: "100%",
     },
 
-    // forgotPassword: {
-
-    // },
+    forgotPassword: {
+        marginTop: 20,
+    },
 
     forgotPasswordText: {
         color: colors.blue1,
