@@ -1,4 +1,5 @@
 import { View, Text, StyleSheet, TextInput, Pressable } from "react-native"
+import { router } from "expo-router"
 import { colors } from "../constants/colors"
 
 export default function Index() {
@@ -45,7 +46,7 @@ export default function Index() {
 
                     <Text style={{textAlign: "center", fontSize: 16}}>Novo por aqui?</Text>
 
-                    <Pressable style={styles.signupButton}>
+                    <Pressable style={styles.signupButton} onPress={() => router.push("/register")}>
                         <Text style={styles.signupButtonText}>Criar conta</Text>
                     </Pressable>
                 </View>
