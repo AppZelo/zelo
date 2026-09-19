@@ -1,6 +1,7 @@
 import { View, Text, StyleSheet, TextInput, Pressable } from "react-native"
 import { router } from "expo-router"
 import { colors } from "../constants/colors"
+import AppButton from "../components/AppButton"
 
 export default function Index() {
     return (
@@ -38,17 +39,10 @@ export default function Index() {
 
             <View style={styles.footer}>
                 <View style={styles.buttonGroup}>
-                    <Pressable style={styles.loginButton}>
-                        <Text style={styles.loginButtonText}>Entrar</Text>
-                    </Pressable>
-
+                    <AppButton text="Entrar"></AppButton>
                     <View style={styles.divider}></View>
-
                     <Text style={{textAlign: "center", fontSize: 16}}>Novo por aqui?</Text>
-
-                    <Pressable style={styles.signupButton} onPress={() => router.push("/register")}>
-                        <Text style={styles.signupButtonText}>Criar conta</Text>
-                    </Pressable>
+                    <AppButton text="Criar conta" onPress={() => router.push("/register")} variant="secondary"></AppButton>
                 </View>
             </View>
         </View>
@@ -130,44 +124,10 @@ const styles = StyleSheet.create({
         width: "80%",
     },
 
-    loginButton: {
-        alignItems: "center",
-        alignSelf: "center",
-        backgroundColor: colors.blue1,
-        borderRadius: 12,
-        height: 56,
-        justifyContent: "center",
-        width: "100%",
-    },
-
-    loginButtonText: {
-        color: colors.white2,
-        fontSize: 18,
-        fontWeight: "bold"
-    },
-
     divider: {
         backgroundColor: colors.gray1,
         height: 1,
         margin: 3,
         width: "100%",
-    },
-
-    signupButton: {
-        alignItems: "center",
-        alignSelf: "center",
-        backgroundColor: colors.white2,
-        borderColor: colors.gray1,
-        borderRadius: 12,
-        borderWidth: 2,
-        height: 56,
-        justifyContent: "center",
-        width: "100%",
-    },
-
-    signupButtonText: {
-        color: colors.blue1,
-        fontSize: 18,
-        fontWeight: "bold"
     },
 })
