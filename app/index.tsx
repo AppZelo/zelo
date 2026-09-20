@@ -41,7 +41,7 @@ export default function Index() {
                 <View style={styles.buttonGroup}>
                     <AppButton text="Entrar"></AppButton>
                     <View style={styles.divider}></View>
-                    <Text style={{textAlign: "center", fontSize: 16}}>Novo por aqui?</Text>
+                    <Text style={styles.signupLabel}>Novo por aqui?</Text>
                     <AppButton text="Criar conta" onPress={() => router.push("/register")} variant="secondary"></AppButton>
                 </View>
             </View>
@@ -129,5 +129,10 @@ const styles = StyleSheet.create({
         height: 1,
         margin: 3,
         width: "100%",
+    },
+
+    signupLabel: {
+        fontSize: 16,
+        textAlign: "center", 
     },
 })
