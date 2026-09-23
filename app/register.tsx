@@ -5,6 +5,7 @@ import BackHeader from "../components/BackHeader"
 import SectionDescription from "../components/SectionDescription"
 import ProfileCard from "../components/ProfileCard"
 import AppButton from "../components/AppButton"
+import { colors } from "../constants/colors"
 
 export default function Register() {
     const [selectedCard, setSelectedCard] = useState("patient")
@@ -45,8 +46,10 @@ export default function Register() {
 const styles = StyleSheet.create({
     container: {
         alignSelf: "center",
+        backgroundColor: colors.white1,
         flex: 1,
-        width: "90%"
+        paddingHorizontal: "5%",
+        width: "100%"
     },
 
     content: {
