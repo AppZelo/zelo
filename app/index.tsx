@@ -2,6 +2,7 @@ import { View, Text, StyleSheet, TextInput, Pressable } from "react-native"
 import { router } from "expo-router"
 import { colors } from "../constants/colors"
 import AppButton from "../components/AppButton"
+import AppInput from "../components/AppInput"
 
 export default function Index() {
     return (
@@ -13,20 +14,16 @@ export default function Index() {
                 </View>
 
                 <View style={styles.form}>
-                    <View style={styles.inputGroup}>
-                        <Text style={styles.label}>CPF ou E-mail</Text>
-                        <TextInput 
-                            placeholder="Ex.: 123.456.789-00"
-                            style={styles.input}
-                        />
-                    </View>
-                    <View style={styles.inputGroup}>
-                        <Text style={styles.label}>Senha</Text>
-                        <TextInput 
-                            placeholder="Digite sua senha"
-                            style={styles.input}
-                            secureTextEntry
-                        />
+                    <AppInput 
+                        labelText="CPF ou E-mail"
+                        placeholder="Ex.: 123.456.789-00"     
+                    ></AppInput>
+                    <View style={styles.passwordGroup}>
+                        <AppInput 
+                            labelText="Senha" 
+                            placeholder="Digite sua senha" 
+                            secureTextEntry={true}
+                        ></AppInput>
 
                         <Pressable style={styles.forgotPassword}>
                             <Text style={styles.forgotPasswordText}>Esqueci minha senha</Text>
@@ -51,9 +48,12 @@ export default function Index() {
 
 const styles = StyleSheet.create({
     container: {
+        alignSelf: "center",
         backgroundColor: colors.white1,
         flex: 1,
         paddingTop: 100,
+        paddingHorizontal: "5%",
+        width: "100%",
     },
     
     content: {
@@ -81,11 +81,6 @@ const styles = StyleSheet.create({
         width: "100%",
     },
 
-    inputGroup: {
-        gap: 5,
-        width: "80%",
-    },
-
     label: {
         alignSelf: "flex-start",
         fontSize: 16,
@@ -99,6 +94,10 @@ const styles = StyleSheet.create({
         borderWidth: 2,
         height: 50,
         paddingLeft: 10,
+        width: "100%",
+    },
+
+    passwordGroup: {
         width: "100%",
     },
 
@@ -121,7 +120,7 @@ const styles = StyleSheet.create({
     
     buttonGroup: {
         gap: 10,
-        width: "80%",
+        width: "100%",
     },
 
     divider: {
