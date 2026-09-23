@@ -4,17 +4,19 @@ import { colors } from "../constants/colors"
 type SelectionCardProps = {
     title: string,
     description: string,
+    selected: boolean,
 }
 
 export default function SelectionCard({
     // icon,
     title,
     description,
+    selected,
 }: SelectionCardProps) {
     return (
-        <Pressable style={styles.card}>
-            <View style={styles.iconContainer}>
-                <Text style={styles.icon}>Icon</Text>
+        <Pressable style={[styles.card, selected && styles.cardSelected]}>
+            <View style={[styles.iconContainer, selected && styles.iconContainerSelected]}>
+                <Text style={[styles.icon, selected && styles.iconSelected]}>Icon</Text>
             </View>
 
             <View style={styles.textContainer}>
@@ -22,8 +24,8 @@ export default function SelectionCard({
                 <Text style={styles.description}>{description}</Text>
             </View>
 
-            <View style={styles.radioOuter}>
-                <View style={styles.radioInner}></View>
+            <View style={[styles.radioOuter, selected && styles.radioOuterSelected]}>
+                <View style={[selected && styles.radioInnerSelected]}></View>
             </View>
         </Pressable>
     )
@@ -38,9 +40,14 @@ const styles = StyleSheet.create({
         borderWidth: 3,
         flexDirection: "row",
         gap: 15,
-        height: 113,
+        maxHeight: 135,
+        minHeight: 110,
         padding: 18,
         width: "100%",
+    },
+
+    cardSelected: {
+        borderColor: colors.green1,
     },
 
     iconContainer: {
@@ -52,9 +59,17 @@ const styles = StyleSheet.create({
         width: 52,
     },
 
+    iconContainerSelected: {
+        backgroundColor: colors.green2,
+    },
+
     icon: {
         color: colors.gray2,
         fontWeight: "bold"
+    },
+
+    iconSelected: {
+        color: colors.green1,
     },
 
     textContainer: {
@@ -79,5 +94,16 @@ const styles = StyleSheet.create({
         borderWidth: 2,
         alignItems: "center",
         justifyContent: "center",
+    },
+
+    radioOuterSelected: {
+        borderColor: colors.green1,
+    },
+
+    radioInnerSelected: {
+        width: 10,
+        height: 10,
+        backgroundColor: colors.green1,
+        borderRadius: 5,
     },
 })
