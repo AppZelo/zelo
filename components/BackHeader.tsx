@@ -12,24 +12,16 @@ export default function BackHeader({
     onPress = () => {router.back()},
 }: BackHeaderProps) {
     return (
-        <View style={styles.container}>
-            <View style={styles.header}>
-                <Pressable style={styles.back} onPress={onPress}>
-                    <Text style={styles.backIcon}>←</Text>
-                </Pressable>
-                <Text style={styles.text}>{text}</Text>
-            </View>
+        <View style={styles.header}>
+            <Pressable style={styles.back} onPress={onPress}>
+                <Text style={styles.backIcon}>←</Text>
+            </Pressable>
+            <Text style={styles.text}>{text}</Text>
         </View>
     )
 }
 
 const styles = StyleSheet.create({
-    container: {
-        alignItems: "center",
-        flex: 1,
-        paddingTop: 50,
-    },
-
     header: {
         alignItems: "center",
         flexDirection: "row",
