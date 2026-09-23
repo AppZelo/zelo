@@ -42,9 +42,8 @@ const styles = StyleSheet.create({
         borderWidth: 3,
         flexDirection: "row",
         gap: 15,
-        maxHeight: 135,
-        minHeight: 110,
-        padding: 18,
+        maxHeight: 130,
+        padding: 15,
         width: "100%",
     },
 

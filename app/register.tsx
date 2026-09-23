@@ -3,6 +3,7 @@ import { View, StyleSheet } from "react-native"
 import BackHeader from "../components/BackHeader"
 import SectionDescription from "../components/SectionDescription"
 import SelectionCard from "../components/SelectionCard"
+import AppButton from "../components/AppButton"
 
 export default function Register() {
     const [selectedCard, setSelectedCard] = useState("patient")
@@ -10,7 +11,7 @@ export default function Register() {
     return (
         <View style={styles.container}>
             <BackHeader text="Cadastro de Perfil"></BackHeader>
-            <View style={styles.selectionGroup}>
+            <View style={styles.content}>
                 <SectionDescription title="Como deseja utilizar a plataforma?" description="Escolha a opção que melhor descreve você para iniciarmos."></SectionDescription>
                 <View style={styles.cards}>
                     <SelectionCard 
@@ -23,13 +24,17 @@ export default function Register() {
                         title="Sou Familiar/Responsável" 
                         description="Quero contratar e acompanhar atendimentos para um familiar de minha responsabilidade." 
                         selected={selectedCard === "guardian"} 
-                        onPress={() => setSelectedCard("guardian")}></SelectionCard>
+                        onPress={() => setSelectedCard("guardian")}
+                    ></SelectionCard>
                     <SelectionCard 
                         title="Sou Especialista da Saúde" 
                         description="Sou enfermeiro, fisio ou médico e quero oferecer meus serviços domiciliares." 
                         selected={selectedCard === "specialist"} 
                         onPress={() => setSelectedCard("specialist")}
                     ></SelectionCard>
+                </View>
+                <View style={styles.footer}>
+                    <AppButton text="Continuar Cadastro"></AppButton>
                 </View>
             </View>
         </View>
@@ -43,12 +48,18 @@ const styles = StyleSheet.create({
         width: "90%"
     },
 
-    selectionGroup: {
-        gap: 20,
+    content: {
+        flex: 1,
+        gap: 12,
     },
 
     cards: {
         alignItems: "center",   
-        gap: 16, 
+        flex: 1,
+        gap: 12, 
+    },
+
+    footer: {
+        paddingBottom: 70,
     },
 })

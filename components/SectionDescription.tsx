@@ -20,7 +20,7 @@ export default function SectionDescription({
 
 const styles = StyleSheet.create({
     descriptionGroup: {
-        gap: 8,
+        gap: 4,
     },
 
     title: {
@@ -30,6 +30,6 @@ const styles = StyleSheet.create({
     },
 
     description: {
-        fontSize: 16,
+        fontSize: 14,
     }
 })
