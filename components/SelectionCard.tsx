@@ -5,6 +5,7 @@ type SelectionCardProps = {
     title: string,
     description: string,
     selected: boolean,
+    onPress: () => void,
 }
 
 export default function SelectionCard({
@@ -12,9 +13,10 @@ export default function SelectionCard({
     title,
     description,
     selected,
+    onPress,
 }: SelectionCardProps) {
     return (
-        <Pressable style={[styles.card, selected && styles.cardSelected]}>
+        <Pressable style={[styles.card, selected && styles.cardSelected]} onPress={onPress}>
             <View style={[styles.iconContainer, selected && styles.iconContainerSelected]}>
                 <Text style={[styles.icon, selected && styles.iconSelected]}>Icon</Text>
             </View>
