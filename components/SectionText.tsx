@@ -1,19 +1,19 @@
 import { View, Text, StyleSheet } from "react-native"
 import { colors } from "../constants/colors"
 
-type SectionDescriptionProps = {
+type SectionTextProps = {
     title: string,
     showDescription?: boolean,
     description?: string,
 }
 
-export default function SectionDescription({
+export default function SectionText({
     title,
     showDescription = false,
     description,
-}: SectionDescriptionProps) {
+}: SectionTextProps) {
     return (
-        <View style={styles.descriptionGroup}>
+        <View style={styles.container}>
             <Text style={styles.title}>{title}</Text>
             {showDescription && <Text style={styles.description}>{description}</Text>}
         </View>
@@ -21,7 +21,7 @@ export default function SectionDescription({
 }
 
 const styles = StyleSheet.create({
-    descriptionGroup: {
+    container: {
         gap: 4,
     },
 
