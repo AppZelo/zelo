@@ -3,17 +3,19 @@ import { colors } from "../constants/colors"
 
 type SectionDescriptionProps = {
     title: string,
-    description: string,
+    showDescription?: boolean,
+    description?: string,
 }
 
 export default function SectionDescription({
     title,
+    showDescription = false,
     description,
 }: SectionDescriptionProps) {
     return (
         <View style={styles.descriptionGroup}>
             <Text style={styles.title}>{title}</Text>
-            <Text style={styles.description}>{description}</Text>
+            {showDescription && <Text style={styles.description}>{description}</Text>}
         </View>
     )
 }
