@@ -1,13 +1,17 @@
 import { View, StyleSheet } from "react-native"
 import BackHeader from "../components/BackHeader"
-import SectionDescription from "../components/SectionDescription"
+import SectionText from "../components/SectionText"
 import { colors } from "../constants/colors"
 
 export default function specialistRegister() {
     return(
         <View style={styles.container}>
             <BackHeader text="Cadastro de Especialista"></BackHeader>
-            <SectionDescription title="Dados Profissionais" description="Insira seus dados de registro para validação de segurança."></SectionDescription>
+            <SectionText 
+                title="Dados Profissionais" 
+                showDescription={true}
+                description="Insira seus dados de registro para validação de segurança."
+            ></SectionText>
         </View>
     )
 }

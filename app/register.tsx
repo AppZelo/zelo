@@ -2,7 +2,7 @@ import { useState } from "react"
 import { View, StyleSheet } from "react-native"
 import { router } from "expo-router"
 import BackHeader from "../components/BackHeader"
-import SectionDescription from "../components/SectionDescription"
+import SectionText from "../components/SectionText"
 import ProfileCard from "../components/ProfileCard"
 import AppButton from "../components/AppButton"
 import { colors } from "../constants/colors"
@@ -26,7 +26,11 @@ export default function Register() {
         <View style={styles.container}>
             <BackHeader text="Cadastro de Perfil"></BackHeader>
             <View style={styles.content}>
-                <SectionDescription title="Como deseja utilizar a plataforma?" description="Escolha a opção que melhor descreve você para iniciarmos."></SectionDescription>
+                <SectionText 
+                    title="Como deseja utilizar a plataforma?" 
+                    showDescription={true}
+                    description="Escolha a opção que melhor descreve você para iniciarmos."
+                ></SectionText>
                 <View style={styles.cards}>
                     <ProfileCard 
                         title="Ser paciente" 
