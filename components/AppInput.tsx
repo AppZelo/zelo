@@ -1,4 +1,4 @@
-import { View, Text, TextInput, StyleSheet } from "react-native"
+import { View, Text, TextInput, StyleSheet, StyleProp, ViewStyle } from "react-native"
 import { colors } from "../constants/colors"
 
 type AppInputProps = {
@@ -6,6 +6,7 @@ type AppInputProps = {
     labelText?: string,
     placeholder?: string,
     secureTextEntry?: boolean,
+    containerStyle?: StyleProp<ViewStyle>
 }
 
 export default function AppInput({
@@ -13,9 +14,10 @@ export default function AppInput({
     labelText,
     placeholder,
     secureTextEntry = false,
+    containerStyle,
 }: AppInputProps) {
     return (
-        <View style={styles.container}>
+        <View style={[styles.container, containerStyle]}>
             {label && <Text style={styles.label}>{labelText}</Text>}
             <TextInput 
                 placeholder={placeholder}
