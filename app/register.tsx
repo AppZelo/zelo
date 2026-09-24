@@ -10,6 +10,18 @@ import { colors } from "../constants/colors"
 export default function Register() {
     const [selectedCard, setSelectedCard] = useState("patient")
 
+    function handleContinue() {
+        if (selectedCard === "patient") {
+            router.push("/patientRegister")
+        }
+        else if (selectedCard === "guardian") {
+            router.push("/guardianRegister")
+        }
+        else if (selectedCard === "specialist") {
+            router.push("/specialistRegister")
+        }
+    }
+
     return (
         <View style={styles.container}>
             <BackHeader text="Cadastro de Perfil"></BackHeader>
@@ -36,7 +48,7 @@ export default function Register() {
                     ></ProfileCard>
                 </View>
                 <View style={styles.footer}>
-                    <AppButton text="Continuar Cadastro"></AppButton>
+                    <AppButton text="Continuar Cadastro" onPress={handleContinue}></AppButton>
                 </View>
             </View>
         </View>
