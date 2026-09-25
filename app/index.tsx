@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, TextInput, Pressable } from "react-native"
+import { View, Text, StyleSheet, TextInput, Pressable, Image } from "react-native"
 import { router } from "expo-router"
 import { colors } from "../constants/colors"
 import AppButton from "../components/AppButton"
@@ -9,7 +9,8 @@ export default function Index() {
         <View style={styles.container}>
             <View style={styles.content}>
                 <View style={styles.header}>
-                    <Text style={styles.title}>ZELO</Text>
+                    {/* <Text style={styles.title}>ZELO</Text> */}
+                    <Image style={styles.zeloImage} source={require("../assets/zelo.png")}></Image>
                     <Text style={styles.subtitle}>Conforto e cuidado para você.</Text>
                 </View>
 
@@ -63,6 +64,8 @@ const styles = StyleSheet.create({
 
     header: {
         alignItems: "center",
+        gap: 12,
+        paddingBottom: 20,
     },
 
     title: {
@@ -70,8 +73,16 @@ const styles = StyleSheet.create({
         fontWeight: "bold",
     },
 
+    zeloImage: {
+        borderRadius: 8,
+        height: 80,
+        width: 80,
+    },
+
     subtitle: {
+        color: colors.gray2,
         fontSize: 16,
+        fontStyle: "italic",
         fontWeight: "semibold"
     },
     
