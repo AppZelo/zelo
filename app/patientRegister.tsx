@@ -1,4 +1,4 @@
-import { View, StyleSheet } from "react-native"
+import { View, StyleSheet, ScrollView } from "react-native"
 import BackHeader from "../components/BackHeader"
 import SectionText from "../components/SectionText"
 import { colors } from "../constants/colors"
@@ -8,7 +8,10 @@ export default function patientRegister() {
     return(
         <View style={styles.container}>
             <BackHeader text="Dados do Paciente"></BackHeader>
-            <View style={styles.content}>
+            <ScrollView 
+                contentContainerStyle={styles.scrollContent} 
+                keyboardShouldPersistTaps="handled"
+            >
                 <SectionText 
                     title="Cadastro do Paciente" 
                     showDescription={true}
@@ -75,7 +78,7 @@ export default function patientRegister() {
                     label={true}
                     labelText="Cidade/UF" 
                 ></AppInput>
-            </View>
+            </ScrollView>
         </View>
     )
 }
@@ -85,11 +88,12 @@ const styles = StyleSheet.create({
         alignSelf: "center",
         backgroundColor: colors.white1,
         flex: 1,
+        paddingBottom: 70,
         paddingHorizontal: "5%",
         width: "100%"
     },
 
-    content: {
+    scrollContent: {
         gap: 20,
     },
 
