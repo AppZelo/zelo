@@ -3,6 +3,7 @@ import BackHeader from "../components/BackHeader"
 import SectionText from "../components/SectionText"
 import { colors } from "../constants/colors"
 import AppInput from "../components/AppInput"
+import AppButton from "../components/AppButton"
 
 export default function patientRegister() {
     return(
@@ -78,6 +79,7 @@ export default function patientRegister() {
                     label={true}
                     labelText="Cidade/UF" 
                 ></AppInput>
+                <AppButton text="Salvar e Continuar"></AppButton>
             </ScrollView>
         </View>
     )
