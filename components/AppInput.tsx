@@ -5,6 +5,7 @@ type AppInputProps = {
     showLabel?: boolean,
     label?: string,
     placeholder?: string,
+    required?: boolean,
     secureTextEntry?: boolean,
     containerStyle?: StyleProp<ViewStyle>
 }
@@ -13,12 +14,16 @@ export default function AppInput({
     showLabel = false,
     label,
     placeholder,
+    required = false,
     secureTextEntry = false,
     containerStyle,
 }: AppInputProps) {
     return (
         <View style={[styles.container, containerStyle]}>
-            {showLabel && <Text style={styles.label}>{label}</Text>}
+            {showLabel && <Text style={styles.label}>
+                {label}
+                {required && <Text style={styles.required}> *</Text>}
+            </Text>}
             <TextInput 
                 placeholder={placeholder}
                 style={styles.input}
@@ -38,6 +43,10 @@ const styles = StyleSheet.create({
         alignSelf: "flex-start",
         fontSize: 16,
         fontWeight: "bold",
+    },
+
+    required: {
+        color: colors.red1,
     },
 
     input: {

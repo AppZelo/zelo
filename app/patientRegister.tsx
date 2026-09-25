@@ -30,18 +30,21 @@ export default function patientRegister() {
                         showLabel
                         label="Nome Completo" 
                         placeholder="Seu nome completo"
+                        required
                     ></AppInput>
                     <View style={styles.row}>
                         <AppInput 
                             showLabel
                             label="CPF" 
                             placeholder="000.000.000-00" 
+                            required
                             containerStyle={{flex: 1}}
                         ></AppInput>
                         <AppInput 
                             showLabel
                             label="Data de Nascimento" 
                             placeholder="DD/MM/AAAA" 
+                            required
                             containerStyle={{flex: 1}}
                         ></AppInput>
                     </View>
@@ -51,12 +54,14 @@ export default function patientRegister() {
                             showLabel
                             label="E-mail" 
                             placeholder="email@exemplo.com" 
+                            required
                             containerStyle={{flex: 1}}
                         ></AppInput>
                         <AppInput 
                             showLabel
                             label="Celular" 
                             placeholder="(XX) XXXXX-XXXX" 
+                            required
                             containerStyle={{flex: 1}}
                         ></AppInput>
                     </View>
@@ -70,26 +75,31 @@ export default function patientRegister() {
                         showLabel
                         label="CEP" 
                         placeholder="00000-000"
+                        required
                     ></AppInput>
                     <View style={styles.row}>
                         <AppInput
                             showLabel
                             label="Rua/Avenida" 
+                            required
                             containerStyle={{flex: 2}}
                         ></AppInput>
                         <AppInput
                             showLabel
                             label="Nº" 
+                            required
                             containerStyle={{flex: 1}}
                         ></AppInput>
                     </View>
                     <AppInput
                         showLabel
                         label="Bairro" 
+                        required
                     ></AppInput>
                     <AppInput
                         showLabel
                         label="Cidade/UF" 
+                        required
                     ></AppInput>
                     <AppButton text="Salvar e Continuar"></AppButton>
                 </ScrollView>
