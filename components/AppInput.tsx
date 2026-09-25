@@ -2,23 +2,23 @@ import { View, Text, TextInput, StyleSheet, StyleProp, ViewStyle } from "react-n
 import { colors } from "../constants/colors"
 
 type AppInputProps = {
-    label?: boolean,
-    labelText?: string,
+    showLabel?: boolean,
+    label?: string,
     placeholder?: string,
     secureTextEntry?: boolean,
     containerStyle?: StyleProp<ViewStyle>
 }
 
 export default function AppInput({
-    label = true,
-    labelText,
+    showLabel = false,
+    label,
     placeholder,
     secureTextEntry = false,
     containerStyle,
 }: AppInputProps) {
     return (
         <View style={[styles.container, containerStyle]}>
-            {label && <Text style={styles.label}>{labelText}</Text>}
+            {showLabel && <Text style={styles.label}>{label}</Text>}
             <TextInput 
                 placeholder={placeholder}
                 style={styles.input}

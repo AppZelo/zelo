@@ -27,30 +27,35 @@ export default function patientRegister() {
                         titleStyle={{fontSize: 22}}
                     ></SectionText>
                     <AppInput 
-                        labelText="Nome Completo" 
+                        showLabel
+                        label="Nome Completo" 
                         placeholder="Seu nome completo"
                     ></AppInput>
                     <View style={styles.row}>
                         <AppInput 
-                            labelText="CPF" 
+                            showLabel
+                            label="CPF" 
                             placeholder="000.000.000-00" 
                             containerStyle={{flex: 1}}
                         ></AppInput>
                         <AppInput 
-                            labelText="Data de Nascimento" 
+                            showLabel
+                            label="Data de Nascimento" 
                             placeholder="DD/MM/AAAA" 
                             containerStyle={{flex: 1}}
                         ></AppInput>
                     </View>
-                    {/* <AppInput labelText="Necessidade Especial/Deficiência"></AppInput> */}
+                    {/* <AppInput showLabel label="Necessidade Especial/Deficiência"></AppInput> */}
                     <View style={styles.row}>
                         <AppInput 
-                            labelText="E-mail" 
+                            showLabel
+                            label="E-mail" 
                             placeholder="email@exemplo.com" 
                             containerStyle={{flex: 1}}
                         ></AppInput>
                         <AppInput 
-                            labelText="Celular" 
+                            showLabel
+                            label="Celular" 
                             placeholder="(XX) XXXXX-XXXX" 
                             containerStyle={{flex: 1}}
                         ></AppInput>
@@ -62,29 +67,29 @@ export default function patientRegister() {
                         titleStyle={{fontSize: 18}}
                     ></SectionText>
                     <AppInput
-                        label={true}
-                        labelText="CEP" 
+                        showLabel
+                        label="CEP" 
                         placeholder="00000-000"
                     ></AppInput>
                     <View style={styles.row}>
                         <AppInput
-                            label={true}
-                            labelText="Rua/Avenida" 
+                            showLabel
+                            label="Rua/Avenida" 
                             containerStyle={{flex: 2}}
                         ></AppInput>
                         <AppInput
-                            label={true}
-                            labelText="Nº" 
+                            showLabel
+                            label="Nº" 
                             containerStyle={{flex: 1}}
                         ></AppInput>
                     </View>
                     <AppInput
-                        label={true}
-                        labelText="Bairro" 
+                        showLabel
+                        label="Bairro" 
                     ></AppInput>
                     <AppInput
-                        label={true}
-                        labelText="Cidade/UF" 
+                        showLabel
+                        label="Cidade/UF" 
                     ></AppInput>
                     <AppButton text="Salvar e Continuar"></AppButton>
                 </ScrollView>

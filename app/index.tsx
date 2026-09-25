@@ -16,12 +16,14 @@ export default function Index() {
 
                 <View style={styles.form}>
                     <AppInput 
-                        labelText="CPF ou E-mail"
+                        showLabel
+                        label="CPF ou E-mail"
                         placeholder="Ex.: 123.456.789-00"     
                     ></AppInput>
                     <View style={styles.passwordGroup}>
                         <AppInput 
-                            labelText="Senha" 
+                            showLabel
+                            label="Senha" 
                             placeholder="Digite sua senha" 
                             secureTextEntry={true}
                         ></AppInput>
