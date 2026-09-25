@@ -8,7 +8,9 @@ import AppButton from "../components/AppButton"
 export default function patientRegister() {
     return(
         <View style={styles.container}>
-            <BackHeader text="Dados do Paciente"></BackHeader>
+            <View style={styles.header}>
+                <BackHeader text="Dados do Paciente"></BackHeader>
+            </View>
             <KeyboardAvoidingView
                 behavior={Platform.OS === "ios" ? "padding" : "height"}
                 style={{flex: 1}}
@@ -97,12 +99,16 @@ const styles = StyleSheet.create({
         backgroundColor: colors.white1,
         flex: 1,
         paddingBottom: 70,
-        paddingHorizontal: "5%",
         width: "100%"
+    },
+
+    header: {
+        paddingHorizontal: "5%",
     },
 
     scrollContent: {
         gap: 20,
+        paddingHorizontal: "5%",
     },
 
     row: {
