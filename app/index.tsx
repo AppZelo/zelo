@@ -142,6 +142,7 @@ const styles = StyleSheet.create({
     },
 
     signupLabel: {
+        color: colors.gray2,
         fontSize: 16,
         textAlign: "center", 
     },
